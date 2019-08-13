@@ -140,3 +140,16 @@ VALUES
 
 SELECT *
 from dbo.Booking
+
+
+/* Queries */
+
+SELECT C.GivenName, C.Surname, T.TourName, T.Description, E.EventYear, E.EventMonth, E.EventDay, E.Fee, B.DateBooked, B.Payment
+From dbo.Client AS C 
+
+INNER JOIN dbo.Booking AS B ON C.ClientID = B.ClientID
+
+INNER JOIN dbo.Tour AS T ON C.ClientID = T.ClientID
+
+INNER JOIN dbo.Event AS E ON C.ClientID = E.ClientID
+
